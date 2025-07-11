@@ -655,22 +655,22 @@ const Header: React.FC = () => {
               onMouseEnter={handleMegaMenuAreaEnter}
               onMouseLeave={handleMegaMenuLeave}
             >
-              <div className="max-w-7xl mx-auto px-4 py-8">
-                <div className="grid grid-cols-4 gap-8">
-                  {/* Menu sections - 3 columns taking 75% of space */}
-                  <div className="col-span-3 grid grid-cols-3 gap-8">
+              <div className="max-w-7xl mx-auto px-4 py-4 sm:py-6 lg:py-8">
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+                  {/* Menu sections - 1 column on mobile, 3 columns on desktop taking 75% of space */}
+                  <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                     {megaMenus[activeMegaMenu as keyof typeof megaMenus].sections.map((section, index) => (
-                      <div key={index} className="space-y-4">
-                        <h3 className="font-bold text-gray-900 mb-4 text-sm uppercase tracking-wider border-b border-gray-200 pb-2">
+                      <div key={index} className="space-y-3 sm:space-y-4">
+                        <h3 className="font-bold text-gray-900 mb-3 sm:mb-4 text-sm uppercase tracking-wider border-b border-gray-200 pb-2">
                           {section.title}
                         </h3>
-                        <ul className="space-y-3">
+                        <ul className="space-y-2 sm:space-y-3">
                           {section.items.map((subItem, subIndex) => (
                             <li key={subIndex}>
                               <Link
                                 to={subItem.href}
                                 onClick={handleMegaMenuLinkClick}
-                                className={`group block p-3 rounded-lg transition-all duration-200 ${
+                                className={`group block p-2 sm:p-3 rounded-lg transition-all duration-200 ${
                                   'special' in subItem && subItem.special 
                                     ? 'bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white shadow-lg' 
                                     : 'hover:bg-gray-50 hover:shadow-sm'
@@ -679,7 +679,7 @@ const Header: React.FC = () => {
                                 <div className="flex items-start justify-between">
                                   <div className="flex-1">
                                     <div className="flex items-center space-x-2 mb-1">
-                                      <span className={`font-medium text-sm ${
+                                      <span className={`font-medium text-xs sm:text-sm ${
                                         'special' in subItem && subItem.special 
                                           ? 'text-white' 
                                           : 'text-gray-900 group-hover:text-purple-600'
@@ -687,7 +687,7 @@ const Header: React.FC = () => {
                                         {subItem.name}
                                       </span>
                                       {'badge' in subItem && subItem.badge && (
-                                        <span className={`px-2 py-0.5 text-xs rounded-full font-medium ${
+                                        <span className={`px-1.5 sm:px-2 py-0.5 text-xs rounded-full font-medium ${
                                           'special' in subItem && subItem.special 
                                             ? 'bg-white/20 text-white border border-white/30' :
                                           subItem.badge === 'Popular' ? 'bg-orange-100 text-orange-600' :
@@ -723,27 +723,27 @@ const Header: React.FC = () => {
                     ))}
                   </div>
 
-                  {/* Featured Section - 1 column taking 25% of space */}
-                  <div className="col-span-1">
-                    <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl p-6 border border-purple-100 h-full">
-                      <div className="flex items-center space-x-2 mb-4">
-                        <Sparkles className="w-5 h-5 text-purple-600" />
+                  {/* Featured Section - 1 column taking 25% of space on desktop, full width on mobile */}
+                  <div className="lg:col-span-1">
+                    <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl p-4 sm:p-6 border border-purple-100 h-full">
+                      <div className="flex items-center space-x-2 mb-3 sm:mb-4">
+                        <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
                         <h3 className="font-bold text-gray-900 text-sm">
                           {megaMenus[activeMegaMenu as keyof typeof megaMenus].featured.title}
                         </h3>
                       </div>
-                      <p className="text-gray-600 text-sm mb-6 leading-relaxed">
+                      <p className="text-gray-600 text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed">
                         {megaMenus[activeMegaMenu as keyof typeof megaMenus].featured.description}
                       </p>
-                      <div className="space-y-4">
+                      <div className="space-y-3 sm:space-y-4">
                         <div className="flex items-center justify-between">
-                          <div className="text-purple-600 font-bold text-sm">
+                          <div className="text-purple-600 font-bold text-xs sm:text-sm">
                             {megaMenus[activeMegaMenu as keyof typeof megaMenus].featured.stats}
                           </div>
                           <Link
                             to={megaMenus[activeMegaMenu as keyof typeof megaMenus].featured.href}
                             onClick={handleMegaMenuLinkClick}
-                            className="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition-colors shadow-sm hover:shadow-md"
+                            className="bg-purple-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium hover:bg-purple-700 transition-colors shadow-sm hover:shadow-md"
                           >
                             {megaMenus[activeMegaMenu as keyof typeof megaMenus].featured.cta}
                           </Link>
@@ -753,10 +753,10 @@ const Header: React.FC = () => {
                             <Link
                               to="/language/meet-lecturers"
                               onClick={handleMegaMenuLinkClick}
-                              className="text-purple-600 hover:text-purple-800 text-sm font-medium flex items-center justify-center space-x-1 group"
+                              className="text-purple-600 hover:text-purple-800 text-xs sm:text-sm font-medium flex items-center justify-center space-x-1 group"
                             >
                               <span>Meet Your Lecturers</span>
-                              <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="w-3 h-3 sm:w-4 sm:h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                               </svg>
                             </Link>
@@ -821,12 +821,12 @@ const Header: React.FC = () => {
               )}
             </div>
 
-            <nav className="space-y-1">
+            <nav className="space-y-2">
               {navigationItems.map((item) => {
                 return (
                   <div key={item.name}>
                     {item.hasMegaMenu ? (
-                      <div className="border border-gray-200 rounded-lg">
+                      <div className="border border-gray-200 rounded-lg overflow-hidden">
                         <button
                           onClick={() => {
                             // Toggle mobile mega menu sections
@@ -835,37 +835,92 @@ const Header: React.FC = () => {
                               mobileMenuElement.classList.toggle('hidden');
                             }
                           }}
-                          className="flex items-center justify-between w-full px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-t-lg transition-colors text-sm font-medium"
+                          className="flex items-center justify-between w-full px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors text-sm font-medium"
                         >
                           <span>{item.name}</span>
-                          <ChevronDown className="w-4 h-4" />
+                          <ChevronDown className="w-4 h-4 transition-transform duration-200" />
                         </button>
-                        <div id={`mobile-${item.name}`} className="hidden border-t border-gray-200 p-3 bg-gray-50 rounded-b-lg">
+                        <div id={`mobile-${item.name}`} className="hidden border-t border-gray-200 bg-gray-50">
                           {megaMenus[item.name as keyof typeof megaMenus]?.sections.map((section, sectionIndex) => (
-                            <div key={sectionIndex} className="mb-4 last:mb-0">
-                              <h4 className="font-semibold text-gray-900 text-xs uppercase tracking-wider mb-2">
+                            <div key={sectionIndex} className="p-4 border-b border-gray-200 last:border-b-0">
+                              <h4 className="font-semibold text-gray-900 text-xs uppercase tracking-wider mb-3 text-purple-600">
                                 {section.title}
                               </h4>
-                              <div className="space-y-1">
+                              <div className="space-y-2">
                                 {section.items.map((subItem, subIndex) => (
                                   <Link
                                     key={subIndex}
                                     to={subItem.href}
-                                    className="block px-2 py-1 text-gray-600 hover:text-purple-600 hover:bg-white rounded text-sm"
+                                    className={`block px-3 py-2 text-gray-700 hover:text-purple-600 hover:bg-white rounded-lg transition-colors text-sm ${
+                                      'special' in subItem && subItem.special 
+                                        ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white hover:from-purple-600 hover:to-blue-600' 
+                                        : ''
+                                    }`}
                                     onClick={() => setIsMenuOpen(false)}
                                   >
-                                    {subItem.name}
+                                    <div className="flex items-center justify-between">
+                                      <span className="font-medium">{subItem.name}</span>
+                                      <div className="flex items-center space-x-2">
+                                        {'badge' in subItem && subItem.badge && (
+                                          <span className={`px-2 py-0.5 text-xs rounded-full font-medium ${
+                                            'special' in subItem && subItem.special 
+                                              ? 'bg-white/20 text-white border border-white/30' :
+                                            subItem.badge === 'Popular' ? 'bg-orange-100 text-orange-600' :
+                                            subItem.badge === 'AI Powered' ? 'bg-purple-100 text-purple-600' :
+                                            subItem.badge === 'New' ? 'bg-green-100 text-green-600' :
+                                            subItem.badge === 'Premium' ? 'bg-blue-100 text-blue-600' :
+                                            subItem.badge === 'Join Us' ? 'bg-yellow-100 text-yellow-600' :
+                                            'bg-gray-100 text-gray-600'
+                                          }`}>
+                                            {subItem.badge}
+                                          </span>
+                                        )}
+                                        {'success' in subItem && subItem.success && (
+                                          <span className="text-green-600 text-xs font-semibold">
+                                            {subItem.success}
+                                          </span>
+                                        )}
+                                      </div>
+                                    </div>
+                                    <p className="text-xs text-gray-500 mt-1">
+                                      {subItem.desc}
+                                    </p>
                                   </Link>
                                 ))}
                               </div>
                             </div>
                           ))}
+                          
+                          {/* Mobile Featured Section */}
+                          <div className="p-4 bg-gradient-to-br from-purple-50 to-blue-50 border-t border-purple-200">
+                            <div className="flex items-center space-x-2 mb-3">
+                              <Sparkles className="w-4 h-4 text-purple-600" />
+                              <h4 className="font-bold text-gray-900 text-sm">
+                                {megaMenus[item.name as keyof typeof megaMenus]?.featured.title}
+                              </h4>
+                            </div>
+                            <p className="text-gray-600 text-xs mb-3 leading-relaxed">
+                              {megaMenus[item.name as keyof typeof megaMenus]?.featured.description}
+                            </p>
+                            <div className="flex items-center justify-between">
+                              <div className="text-purple-600 font-bold text-xs">
+                                {megaMenus[item.name as keyof typeof megaMenus]?.featured.stats}
+                              </div>
+                              <Link
+                                to={megaMenus[item.name as keyof typeof megaMenus]?.featured.href || '#'}
+                                className="bg-purple-600 text-white px-3 py-1.5 rounded-lg text-xs font-medium hover:bg-purple-700 transition-colors"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                {megaMenus[item.name as keyof typeof megaMenus]?.featured.cta}
+                              </Link>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     ) : (
                       <Link
                         to={item.href}
-                        className="flex items-center space-x-2 px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors text-sm font-medium"
+                        className="flex items-center space-x-2 px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors text-sm font-medium"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         <span>{item.name}</span>

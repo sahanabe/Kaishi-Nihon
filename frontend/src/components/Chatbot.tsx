@@ -141,27 +141,27 @@ const Chatbot: React.FC = () => {
       {/* Floating Chat Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-6 right-6 z-50 p-4 rounded-full shadow-lg transition-all duration-300 ${
+        className={`fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 p-3 sm:p-4 rounded-full shadow-lg transition-all duration-300 ${
           isOpen 
             ? 'bg-red-500 hover:bg-red-600 text-white' 
             : 'bg-blue-600 hover:bg-blue-700 text-white'
         }`}
       >
-        {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
+        {isOpen ? <X size={20} className="sm:w-6 sm:h-6" /> : <MessageCircle size={20} className="sm:w-6 sm:h-6" />}
       </button>
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-50 w-96 h-[500px] bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col">
+        <div className="fixed bottom-20 sm:bottom-24 right-2 sm:right-6 z-50 w-[calc(100vw-1rem)] sm:w-80 md:w-96 h-[calc(100vh-8rem)] sm:h-[500px] bg-white rounded-xl sm:rounded-2xl shadow-2xl border border-gray-200 flex flex-col">
           {/* Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-t-2xl">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3 sm:p-4 rounded-t-xl sm:rounded-t-2xl">
             <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                  <Bot size={20} />
+              <div className="flex items-center space-x-2 sm:space-x-3">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center">
+                  <Bot size={16} className="sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">KaishiNihon AI</h3>
+                  <h3 className="font-semibold text-sm sm:text-base">KaishiNihon AI</h3>
                   <p className="text-xs text-blue-100">Online Assistant</p>
                 </div>
               </div>
@@ -169,33 +169,33 @@ const Chatbot: React.FC = () => {
                 onClick={() => setIsOpen(false)}
                 className="text-white/80 hover:text-white transition-colors"
               >
-                <X size={20} />
+                <X size={18} className="sm:w-5 sm:h-5" />
               </button>
             </div>
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4">
+          <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 sm:space-y-4">
             {messages.map((message) => (
               <div
                 key={message.id}
                 className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-[80%] p-3 rounded-2xl ${
+                  className={`max-w-[85%] sm:max-w-[80%] p-2 sm:p-3 rounded-xl sm:rounded-2xl ${
                     message.sender === 'user'
                       ? 'bg-blue-600 text-white rounded-br-md'
                       : 'bg-gray-100 text-gray-900 rounded-bl-md'
                   }`}
                 >
-                  <div className="flex items-start space-x-2">
+                  <div className="flex items-start space-x-1 sm:space-x-2">
                     {message.sender === 'bot' && (
-                      <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Bot size={12} className="text-white" />
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Bot size={10} className="sm:w-3 sm:h-3 text-white" />
                       </div>
                     )}
                     <div className="flex-1">
-                      <p className="text-sm leading-relaxed">{message.text}</p>
+                      <p className="text-xs sm:text-sm leading-relaxed">{message.text}</p>
                       <p className={`text-xs mt-1 ${
                         message.sender === 'user' ? 'text-blue-100' : 'text-gray-500'
                       }`}>
@@ -203,8 +203,8 @@ const Chatbot: React.FC = () => {
                       </p>
                     </div>
                     {message.sender === 'user' && (
-                      <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <User size={12} className="text-white" />
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <User size={10} className="sm:w-3 sm:h-3 text-white" />
                       </div>
                     )}
                   </div>
@@ -215,15 +215,15 @@ const Chatbot: React.FC = () => {
             {/* Typing Indicator */}
             {isTyping && (
               <div className="flex justify-start">
-                <div className="bg-gray-100 text-gray-900 rounded-2xl rounded-bl-md p-3">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center">
-                      <Bot size={12} className="text-white" />
+                <div className="bg-gray-100 text-gray-900 rounded-xl sm:rounded-2xl rounded-bl-md p-2 sm:p-3">
+                  <div className="flex items-center space-x-1 sm:space-x-2">
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 bg-blue-600 rounded-full flex items-center justify-center">
+                      <Bot size={10} className="sm:w-3 sm:h-3 text-white" />
                     </div>
                     <div className="flex space-x-1">
-                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                     </div>
                   </div>
                 </div>
@@ -234,7 +234,7 @@ const Chatbot: React.FC = () => {
           </div>
 
           {/* Input */}
-          <div className="p-4 border-t border-gray-200">
+          <div className="p-3 sm:p-4 border-t border-gray-200">
             <div className="flex space-x-2">
               <input
                 ref={inputRef}
@@ -243,15 +243,15 @@ const Chatbot: React.FC = () => {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Type your message..."
-                className="flex-1 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                className="flex-1 px-3 sm:px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-xs sm:text-sm text-gray-900 bg-white placeholder-gray-500"
                 disabled={isTyping}
               />
               <button
                 onClick={handleSendMessage}
                 disabled={!inputValue.trim() || isTyping}
-                className="p-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+                className="p-1.5 sm:p-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
               >
-                {isTyping ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
+                {isTyping ? <Loader2 size={14} className="sm:w-4 sm:h-4 animate-spin" /> : <Send size={14} className="sm:w-4 sm:h-4" />}
               </button>
             </div>
           </div>

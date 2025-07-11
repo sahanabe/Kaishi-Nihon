@@ -199,28 +199,28 @@ const JLPTN5: React.FC = () => {
         <div className="relative max-w-7xl mx-auto px-4 py-16">
           <div className="text-center">
             <div className="flex items-center justify-center space-x-2 mb-4">
-              <Sparkles className="w-8 h-8 text-yellow-300" />
-              <span className="bg-yellow-300 text-purple-900 px-3 py-1 rounded-full text-sm font-bold">
+              <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-300" />
+              <span className="bg-yellow-300 text-purple-900 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-bold">
                 AI-Powered Learning
               </span>
             </div>
-            <h1 className="text-5xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
               JLPT N5 <span className="text-yellow-300">AI Mastery Course</span>
             </h1>
-            <p className="text-xl mb-8 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-3xl mx-auto">
               Experience the future of Japanese learning with our revolutionary AI system. 
               Complete N5 mastery in just 6 months with personalized, adaptive learning.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <button className="bg-yellow-400 text-purple-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-300 transition-all duration-300 flex items-center space-x-2 group">
-                <PlayCircle className="w-6 h-6 group-hover:scale-110 transition-transform" />
+              <button className="bg-yellow-400 text-purple-900 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-yellow-300 transition-all duration-300 flex items-center space-x-2 group w-full sm:w-auto">
+                <PlayCircle className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
                 <span>Start Learning Now</span>
               </button>
-              <button className="bg-gradient-to-r from-green-500 to-blue-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-green-600 hover:to-blue-600 transition-all duration-300 flex items-center space-x-2 group">
-                <Users className="w-6 h-6 group-hover:scale-110 transition-transform" />
+              <button className="bg-gradient-to-r from-green-500 to-blue-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:from-green-600 hover:to-blue-600 transition-all duration-300 flex items-center space-x-2 group w-full sm:w-auto">
+                <Users className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
                 <span>Join Real Online N5 Classes</span>
               </button>
-              <button className="bg-white/20 backdrop-blur-sm border border-white/30 px-8 py-4 rounded-xl font-semibold hover:bg-white/30 transition-all duration-300">
+              <button className="bg-white/20 backdrop-blur-sm border border-white/30 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-white/30 transition-all duration-300 w-full sm:w-auto">
                 Watch Demo Video
               </button>
             </div>
@@ -231,7 +231,7 @@ const JLPTN5: React.FC = () => {
       {/* Navigation Tabs */}
       <div className="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4">
-          <nav className="flex space-x-8">
+          <nav className="flex overflow-x-auto scrollbar-hide space-x-4 sm:space-x-8 pb-2">
             {[
               { id: 'overview', label: 'Course Overview', icon: <BookOpen className="w-4 h-4" /> },
               { id: 'curriculum', label: 'Learning Path', icon: <Target className="w-4 h-4" /> },
@@ -242,14 +242,14 @@ const JLPTN5: React.FC = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center space-x-2 py-4 border-b-2 transition-colors ${
+                className={`flex items-center space-x-2 py-4 border-b-2 transition-colors whitespace-nowrap ${
                   activeTab === tab.id
                     ? 'border-purple-600 text-purple-600'
                     : 'border-transparent text-gray-600 hover:text-purple-600'
                 }`}
               >
                 {tab.icon}
-                <span className="font-medium">{tab.label}</span>
+                <span className="font-medium text-sm sm:text-base">{tab.label}</span>
               </button>
             ))}
           </nav>
@@ -261,25 +261,25 @@ const JLPTN5: React.FC = () => {
         {activeTab === 'overview' && (
           <div className="space-y-12">
             {/* Course Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
               {[
-                { label: 'Total Students', value: '50,000+', icon: <Users className="w-8 h-8" />, color: 'text-blue-600' },
-                { label: 'Success Rate', value: '98.5%', icon: <TrendingUp className="w-8 h-8" />, color: 'text-green-600' },
-                { label: 'Course Duration', value: '6 Months', icon: <Clock className="w-8 h-8" />, color: 'text-purple-600' },
-                { label: 'Global Access', value: '150+ Countries', icon: <Globe className="w-8 h-8" />, color: 'text-orange-600' }
+                { label: 'Total Students', value: '50,000+', icon: <Users className="w-6 h-6 sm:w-8 sm:h-8" />, color: 'text-blue-600' },
+                { label: 'Success Rate', value: '98.5%', icon: <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8" />, color: 'text-green-600' },
+                { label: 'Course Duration', value: '6 Months', icon: <Clock className="w-6 h-6 sm:w-8 sm:h-8" />, color: 'text-purple-600' },
+                { label: 'Global Access', value: '150+ Countries', icon: <Globe className="w-6 h-6 sm:w-8 sm:h-8" />, color: 'text-orange-600' }
               ].map((stat, index) => (
-                <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                  <div className={`${stat.color} mb-3`}>{stat.icon}</div>
-                  <div className="text-2xl font-bold text-gray-900 mb-1">{stat.value}</div>
-                  <div className="text-gray-600">{stat.label}</div>
+                <div key={index} className="bg-white p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                  <div className={`${stat.color} mb-2 sm:mb-3`}>{stat.icon}</div>
+                  <div className="text-lg sm:text-2xl font-bold text-gray-900 mb-1">{stat.value}</div>
+                  <div className="text-xs sm:text-sm text-gray-600">{stat.label}</div>
                 </div>
               ))}
             </div>
 
             {/* What You'll Learn */}
-            <div className="bg-white rounded-2xl shadow-lg p-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">What You'll Master</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">What You'll Master</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4 sm:gap-6 lg:gap-8">
                 {[
                   { title: '92 Characters', subtitle: 'Hiragana & Katakana', icon: 'あ', bg: 'bg-blue-100' },
                   { title: '800 Vocabulary', subtitle: 'Essential N5 Words', icon: '語', bg: 'bg-green-100' },
@@ -290,129 +290,129 @@ const JLPTN5: React.FC = () => {
                   { title: 'Interview Skills', subtitle: 'Language School Prep', icon: '話', bg: 'bg-indigo-100' }
                 ].map((item, index) => (
                   <div key={index} className="text-center">
-                    <div className={`${item.bg} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4`}>
-                      <span className="text-2xl font-bold">{item.icon}</span>
+                    <div className={`${item.bg} w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4`}>
+                      <span className="text-lg sm:text-2xl font-bold">{item.icon}</span>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                    <p className="text-gray-600">{item.subtitle}</p>
+                    <h3 className="text-sm sm:text-xl font-bold text-gray-900 mb-1 sm:mb-2">{item.title}</h3>
+                    <p className="text-xs sm:text-sm text-gray-600">{item.subtitle}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Live Online Classes Section */}
-            <div className="bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-2xl p-8">
-              <div className="text-center mb-8">
+            <div className="bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-2xl p-6 sm:p-8">
+              <div className="text-center mb-6 sm:mb-8">
                 <div className="flex items-center justify-center space-x-2 mb-4">
-                  <Users className="w-8 h-8 text-yellow-300" />
-                  <span className="bg-yellow-300 text-green-900 px-3 py-1 rounded-full text-sm font-bold">
+                  <Users className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-300" />
+                  <span className="bg-yellow-300 text-green-900 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-bold">
                     Live Classes
                   </span>
                 </div>
-                <h2 className="text-3xl font-bold mb-4">Join Real Online N5 Classes & Meet Your Lecturers</h2>
-                <p className="text-lg text-green-100 max-w-3xl mx-auto">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-4">Join Real Online N5 Classes & Meet Your Lecturers</h2>
+                <p className="text-base sm:text-lg text-green-100 max-w-3xl mx-auto">
                   Experience the perfect blend of AI-powered learning and human expertise with our live online classes
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6">
                   <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
-                      <Users className="w-6 h-6 text-green-900" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+                      <Users className="w-5 h-5 sm:w-6 sm:h-6 text-green-900" />
                     </div>
-                    <h3 className="text-xl font-bold">Live Interactive Classes</h3>
+                    <h3 className="text-lg sm:text-xl font-bold">Live Interactive Classes</h3>
                   </div>
                   <ul className="space-y-2 text-green-100">
-                    <li className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 flex-shrink-0" />
-                      <span>Daily live sessions with expert Japanese teachers</span>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm sm:text-base">Daily live sessions with expert Japanese teachers</span>
                     </li>
-                    <li className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 flex-shrink-0" />
-                      <span>Real-time interaction and instant Q&A</span>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm sm:text-base">Real-time interaction and instant Q&A</span>
                     </li>
-                    <li className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 flex-shrink-0" />
-                      <span>Small class sizes (max 12 students)</span>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm sm:text-base">Small class sizes (max 12 students)</span>
                     </li>
-                    <li className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 flex-shrink-0" />
-                      <span>Multiple time zones available globally</span>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm sm:text-base">Multiple time zones available globally</span>
                     </li>
                   </ul>
                 </div>
                 
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6">
                   <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
-                      <Star className="w-6 h-6 text-green-900" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+                      <Star className="w-5 h-5 sm:w-6 sm:h-6 text-green-900" />
                     </div>
-                    <h3 className="text-xl font-bold">Meet Your Expert Lecturers</h3>
+                    <h3 className="text-lg sm:text-xl font-bold">Meet Your Expert Lecturers</h3>
                   </div>
                   <ul className="space-y-2 text-green-100">
-                    <li className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 flex-shrink-0" />
-                      <span>Native Japanese speakers with teaching certifications</span>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm sm:text-base">Native Japanese speakers with teaching certifications</span>
                     </li>
-                    <li className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 flex-shrink-0" />
-                      <span>1-on-1 mentorship sessions available</span>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm sm:text-base">1-on-1 mentorship sessions available</span>
                     </li>
-                    <li className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 flex-shrink-0" />
-                      <span>Cultural insights and pronunciation coaching</span>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm sm:text-base">Cultural insights and pronunciation coaching</span>
                     </li>
-                    <li className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 flex-shrink-0" />
-                      <span>Personal progress tracking and feedback</span>
+                    <li className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm sm:text-base">Personal progress tracking and feedback</span>
                     </li>
                   </ul>
                 </div>
               </div>
 
               <div className="text-center">
-                <button className="bg-yellow-400 text-green-900 px-10 py-4 rounded-xl font-bold text-xl hover:bg-yellow-300 transition-all duration-300 flex items-center space-x-3 mx-auto group">
-                  <Users className="w-7 h-7 group-hover:scale-110 transition-transform" />
+                <button className="bg-yellow-400 text-green-900 px-6 sm:px-10 py-3 sm:py-4 rounded-xl font-bold text-lg sm:text-xl hover:bg-yellow-300 transition-all duration-300 flex items-center space-x-2 sm:space-x-3 mx-auto group w-full sm:w-auto justify-center">
+                  <Users className="w-5 h-5 sm:w-7 sm:h-7 group-hover:scale-110 transition-transform" />
                   <span>Join Live Classes & Meet Lecturers</span>
-                  <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <p className="text-green-100 text-sm mt-4">
+                <p className="text-green-100 text-xs sm:text-sm mt-4">
                   🎯 Free trial class available • 📅 Flexible scheduling • 🌍 Global access
                 </p>
               </div>
             </div>
 
             {/* Learning Methodology */}
-            <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-2xl p-8">
-              <h2 className="text-3xl font-bold mb-8 text-center">Revolutionary AI Learning System</h2>
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-2xl p-6 sm:p-8">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center">Revolutionary AI Learning System</h2>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
                 <div className="text-center">
-                  <div className="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Brain className="w-8 h-8" />
+                  <div className="bg-white/20 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <Brain className="w-6 h-6 sm:w-8 sm:h-8" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">Adaptive AI</h3>
-                  <p className="text-purple-100">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Adaptive AI</h3>
+                  <p className="text-purple-100 text-sm sm:text-base">
                     Our AI continuously analyzes your learning patterns and adjusts content difficulty, 
                     pacing, and focus areas for optimal progress.
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Zap className="w-8 h-8" />
+                  <div className="bg-white/20 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <Zap className="w-6 h-6 sm:w-8 sm:h-8" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">Instant Feedback</h3>
-                  <p className="text-purple-100">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Instant Feedback</h3>
+                  <p className="text-purple-100 text-sm sm:text-base">
                     Get immediate corrections, explanations, and guidance. No waiting for teacher reviews - 
                     learn and improve in real-time.
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Target className="w-8 h-8" />
+                  <div className="bg-white/20 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <Target className="w-6 h-6 sm:w-8 sm:h-8" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">Personalized Path</h3>
-                  <p className="text-purple-100">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Personalized Path</h3>
+                  <p className="text-purple-100 text-sm sm:text-base">
                     Every student follows a unique learning journey tailored to their strengths, 
                     weaknesses, and learning preferences.
                   </p>
@@ -432,36 +432,36 @@ const JLPTN5: React.FC = () => {
             </div>
 
             {/* Learning Steps */}
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               {learningSteps.map((step, index) => (
                 <div key={step.id} className="relative">
-                  <div className="flex items-start space-x-6">
+                  <div className="flex flex-col sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-6">
                     {/* Step Number */}
-                    <div className={`flex-shrink-0 w-16 h-16 bg-gradient-to-r ${step.color} rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg`}>
+                    <div className={`flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r ${step.color} rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl shadow-lg mx-auto sm:mx-0`}>
                       {step.id}
                     </div>
 
                     {/* Step Content */}
-                    <div className={`flex-1 rounded-xl shadow-lg p-8 transition-shadow ${
+                    <div className={`flex-1 rounded-xl shadow-lg p-4 sm:p-8 transition-shadow ${
                       isStepLocked(step.id) 
                         ? 'bg-gray-100 opacity-75' 
                         : 'bg-white hover:shadow-xl'
                     }`}>
-                      <div className="flex items-start justify-between mb-4">
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 space-y-2 sm:space-y-0">
                         <div className="flex items-center space-x-3">
                           <div className={`${isStepLocked(step.id) ? 'text-gray-400' : 'text-gray-600'}`}>
                             {step.icon}
                           </div>
-                          <h3 className={`text-2xl font-bold ${isStepLocked(step.id) ? 'text-gray-500' : 'text-gray-900'}`}>
+                          <h3 className={`text-lg sm:text-2xl font-bold ${isStepLocked(step.id) ? 'text-gray-500' : 'text-gray-900'}`}>
                             {step.title}
                             {isStepLocked(step.id) && (
-                              <span className="ml-2 text-sm bg-gray-300 text-gray-600 px-2 py-1 rounded-full">
+                              <span className="ml-2 text-xs sm:text-sm bg-gray-300 text-gray-600 px-2 py-1 rounded-full">
                                 🔒 Locked
                               </span>
                             )}
                           </h3>
                         </div>
-                        <div className={`text-sm px-3 py-1 rounded-full ${
+                        <div className={`text-xs sm:text-sm px-2 sm:px-3 py-1 rounded-full ${
                           isStepLocked(step.id) 
                             ? 'text-gray-500 bg-gray-200' 
                             : 'text-gray-500 bg-gray-100'
@@ -477,13 +477,13 @@ const JLPTN5: React.FC = () => {
                         }
                       </p>
                       
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
                         {step.details.map((detail, detailIndex) => (
-                          <div key={detailIndex} className="flex items-center space-x-2">
-                            <CheckCircle className={`w-4 h-4 flex-shrink-0 ${
+                          <div key={detailIndex} className="flex items-start space-x-2">
+                            <CheckCircle className={`w-4 h-4 flex-shrink-0 mt-0.5 ${
                               isStepLocked(step.id) ? 'text-gray-400' : 'text-green-600'
                             }`} />
-                            <span className={`text-sm ${
+                            <span className={`text-xs sm:text-sm ${
                               isStepLocked(step.id) ? 'text-gray-500' : 'text-gray-700'
                             }`}>
                               {detail}
@@ -521,12 +521,12 @@ const JLPTN5: React.FC = () => {
                       {/* Kanji Learning Plan - Special section for step 3 */}
                       {step.id === 3 && step.kanjiSets && (
                         <div className="mt-6 mb-6">
-                          <h4 className="text-lg font-bold text-gray-900 mb-4">📅 6-Week Learning Plan (3 Kanji per Day)</h4>
-                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                          <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-4">📅 6-Week Learning Plan (3 Kanji per Day)</h4>
+                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                             {step.kanjiSets.map((weekSet, weekIndex) => (
-                              <div key={weekIndex} className="bg-gradient-to-br from-rose-50 to-pink-50 border border-rose-200 rounded-lg p-4">
+                              <div key={weekIndex} className="bg-gradient-to-br from-rose-50 to-pink-50 border border-rose-200 rounded-lg p-3 sm:p-4">
                                 <div className="flex items-center justify-between mb-3">
-                                  <h5 className="font-bold text-rose-800">Week {weekSet.week}</h5>
+                                  <h5 className="font-bold text-rose-800 text-sm sm:text-base">Week {weekSet.week}</h5>
                                   <span className="text-xs bg-rose-200 text-rose-800 px-2 py-1 rounded-full">
                                     Days {weekSet.days}
                                   </span>
@@ -535,7 +535,7 @@ const JLPTN5: React.FC = () => {
                                   {weekSet.kanji.map((kanji, kanjiIndex) => (
                                     <div 
                                       key={kanjiIndex}
-                                      className="w-8 h-8 bg-white border border-rose-300 rounded flex items-center justify-center text-sm font-bold text-gray-900 hover:bg-rose-100 transition-colors cursor-pointer"
+                                      className="w-6 h-6 sm:w-8 sm:h-8 bg-white border border-rose-300 rounded flex items-center justify-center text-xs sm:text-sm font-bold text-gray-900 hover:bg-rose-100 transition-colors cursor-pointer"
                                       title={`Day ${Math.floor(kanjiIndex / 3) + 1 + (weekSet.week - 1) * 7}: ${kanji}`}
                                     >
                                       {kanji}
@@ -548,12 +548,12 @@ const JLPTN5: React.FC = () => {
                               </div>
                             ))}
                           </div>
-                          <div className="mt-4 p-4 bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200 rounded-lg">
+                          <div className="mt-4 p-3 sm:p-4 bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200 rounded-lg">
                             <div className="flex items-start space-x-3">
-                              <div className="text-2xl">💡</div>
+                              <div className="text-xl sm:text-2xl">💡</div>
                               <div>
-                                <h5 className="font-bold text-yellow-800 mb-1">Learning Strategy</h5>
-                                <p className="text-sm text-yellow-700">
+                                <h5 className="font-bold text-yellow-800 mb-1 text-sm sm:text-base">Learning Strategy</h5>
+                                <p className="text-xs sm:text-sm text-yellow-700">
                                   Each day focuses on 3 kanji with stroke order, readings (on-yomi/kun-yomi), meanings, and real-world usage examples. 
                                   Spaced repetition ensures long-term retention.
                                 </p>
@@ -568,63 +568,63 @@ const JLPTN5: React.FC = () => {
                         {step.id === 1 ? (
                           <Link 
                             to="/language/hiragana-katakana"
-                            className={`bg-gradient-to-r ${step.color} text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 transition-transform flex items-center space-x-2 inline-flex`}
+                            className={`bg-gradient-to-r ${step.color} text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:scale-105 transition-transform flex items-center space-x-2 inline-flex text-sm sm:text-base`}
                           >
                             <span>Start Step {step.id}</span>
-                            <ChevronRight className="w-4 h-4" />
+                            <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
                           </Link>
                         ) : step.id === 2 ? (
                           <Link 
                             to="/language/n5-vocabulary"
-                            className={`bg-gradient-to-r ${step.color} text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 transition-transform flex items-center space-x-2 inline-flex`}
+                            className={`bg-gradient-to-r ${step.color} text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:scale-105 transition-transform flex items-center space-x-2 inline-flex text-sm sm:text-base`}
                           >
                             <span>Start Step {step.id}</span>
-                            <ChevronRight className="w-4 h-4" />
+                            <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
                           </Link>
                         ) : step.id === 3 ? (
                           <Link 
                             to="/language/kanji-mastery"
-                            className={`bg-gradient-to-r ${step.color} text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 transition-transform flex items-center space-x-2 inline-flex`}
+                            className={`bg-gradient-to-r ${step.color} text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:scale-105 transition-transform flex items-center space-x-2 inline-flex text-sm sm:text-base`}
                           >
                             <span>Start Step {step.id}</span>
-                            <ChevronRight className="w-4 h-4" />
+                            <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
                           </Link>
                         ) : step.id === 4 ? (
                           <Link 
                             to="/language/grammar-fundamentals"
-                            className={`bg-gradient-to-r ${step.color} text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 transition-transform flex items-center space-x-2 inline-flex`}
+                            className={`bg-gradient-to-r ${step.color} text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:scale-105 transition-transform flex items-center space-x-2 inline-flex text-sm sm:text-base`}
                           >
                             <span>Start Step {step.id}</span>
-                            <ChevronRight className="w-4 h-4" />
+                            <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
                           </Link>
                         ) : step.id === 5 ? (
                           <Link 
                             to="/language/minna-no-nihongo"
-                            className={`bg-gradient-to-r ${step.color} text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 transition-transform flex items-center space-x-2 inline-flex`}
+                            className={`bg-gradient-to-r ${step.color} text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:scale-105 transition-transform flex items-center space-x-2 inline-flex text-sm sm:text-base`}
                           >
                             <span>Start Step {step.id}</span>
-                            <ChevronRight className="w-4 h-4" />
+                            <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
                           </Link>
                         ) : step.id === 6 ? (
                           <Link 
                             to="/language/comprehensive-testing-n5"
-                            className={`bg-gradient-to-r ${step.color} text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 transition-transform flex items-center space-x-2 inline-flex`}
+                            className={`bg-gradient-to-r ${step.color} text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:scale-105 transition-transform flex items-center space-x-2 inline-flex text-sm sm:text-base`}
                           >
                             <span>Start Step {step.id}</span>
-                            <ChevronRight className="w-4 h-4" />
+                            <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
                           </Link>
                         ) : step.id === 7 ? (
                           <Link 
                             to="/language/ai-interview-preparation"
-                            className={`bg-gradient-to-r ${step.color} text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 transition-transform flex items-center space-x-2 inline-flex`}
+                            className={`bg-gradient-to-r ${step.color} text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:scale-105 transition-transform flex items-center space-x-2 inline-flex text-sm sm:text-base`}
                           >
                             <span>Start Step {step.id}</span>
-                            <ChevronRight className="w-4 h-4" />
+                            <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
                           </Link>
                         ) : step.id === 8 ? (
                           <button 
                             disabled={isStepLocked(step.id)}
-                            className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center space-x-2 ${
+                            className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold transition-all duration-300 flex items-center space-x-2 text-sm sm:text-base ${
                               isStepLocked(step.id)
                                 ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
                                 : `bg-gradient-to-r ${step.color} text-white hover:scale-105`
@@ -633,12 +633,12 @@ const JLPTN5: React.FC = () => {
                             <span>
                               {isStepLocked(step.id) ? '🔒 Complete Previous Steps' : 'Start Step 8'}
                             </span>
-                            {!isStepLocked(step.id) && <ChevronRight className="w-4 h-4" />}
+                            {!isStepLocked(step.id) && <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />}
                           </button>
                         ) : (
-                          <button className={`bg-gradient-to-r ${step.color} text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 transition-transform flex items-center space-x-2`}>
+                          <button className={`bg-gradient-to-r ${step.color} text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:scale-105 transition-transform flex items-center space-x-2 text-sm sm:text-base`}>
                             <span>Start Step {step.id}</span>
-                            <ChevronRight className="w-4 h-4" />
+                            <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
                           </button>
                         )}
                       </div>
@@ -647,7 +647,7 @@ const JLPTN5: React.FC = () => {
 
                   {/* Connecting Line */}
                   {index < learningSteps.length - 1 && (
-                    <div className="absolute left-8 top-16 w-0.5 h-8 bg-gray-300"></div>
+                    <div className="absolute left-6 sm:left-8 top-12 sm:top-16 w-0.5 h-6 sm:h-8 bg-gray-300"></div>
                   )}
                 </div>
               ))}
@@ -656,23 +656,23 @@ const JLPTN5: React.FC = () => {
         )}
 
         {activeTab === 'ai-features' && (
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             <div className="text-center">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Cutting-Edge AI Technology</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-4">Cutting-Edge AI Technology</h2>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
                 Experience the most advanced Japanese learning AI ever created
               </p>
             </div>
 
             {/* AI Features Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
               {aiFeatures.map((feature, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
-                  <div className="flex items-start space-x-4">
+                <div key={index} className="bg-white rounded-xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-shadow">
+                  <div className="flex items-start space-x-3 sm:space-x-4">
                     <div className="flex-shrink-0">{feature.icon}</div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                      <p className="text-gray-600">{feature.description}</p>
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">{feature.title}</h3>
+                      <p className="text-sm sm:text-base text-gray-600">{feature.description}</p>
                     </div>
                   </div>
                 </div>
@@ -680,22 +680,22 @@ const JLPTN5: React.FC = () => {
             </div>
 
             {/* AI Demo Section */}
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl p-8">
-              <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold mb-4">See AI in Action</h3>
-                <p className="text-blue-100 text-lg">
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl p-6 sm:p-8">
+              <div className="text-center mb-6 sm:mb-8">
+                <h3 className="text-2xl sm:text-3xl font-bold mb-4">See AI in Action</h3>
+                <p className="text-blue-100 text-base sm:text-lg">
                   Watch how our AI adapts to your learning style in real-time
                 </p>
               </div>
               
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6">
                 <div className="aspect-video bg-black/20 rounded-lg flex items-center justify-center">
-                  <button className="bg-white text-purple-600 w-16 h-16 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
-                    <PlayCircle className="w-8 h-8" />
+                  <button className="bg-white text-purple-600 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                    <PlayCircle className="w-6 h-6 sm:w-8 sm:h-8" />
                   </button>
                 </div>
                 <div className="mt-4 text-center">
-                  <p className="text-blue-100">Interactive AI Demo - 3 minutes</p>
+                  <p className="text-blue-100 text-sm sm:text-base">Interactive AI Demo - 3 minutes</p>
                 </div>
               </div>
             </div>
@@ -703,69 +703,69 @@ const JLPTN5: React.FC = () => {
         )}
 
         {activeTab === 'exams' && (
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             <div className="text-center">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Comprehensive Testing System</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-4">Comprehensive Testing System</h2>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
                 Regular assessments ensure solid progress and JLPT readiness
               </p>
             </div>
 
             {/* Exam Schedule */}
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Exam Schedule</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-blue-50 p-6 rounded-lg">
-                  <h4 className="font-bold text-blue-900 mb-2">Every 10 Lessons</h4>
-                  <p className="text-blue-700">Comprehensive progress evaluation</p>
+            <div className="bg-white rounded-xl shadow-lg p-6 sm:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Exam Schedule</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                <div className="bg-blue-50 p-4 sm:p-6 rounded-lg">
+                  <h4 className="font-bold text-blue-900 mb-2 text-sm sm:text-base">Every 10 Lessons</h4>
+                  <p className="text-blue-700 text-sm sm:text-base">Comprehensive progress evaluation</p>
                 </div>
-                <div className="bg-green-50 p-6 rounded-lg">
-                  <h4 className="font-bold text-green-900 mb-2">JLPT Mock Tests</h4>
-                  <p className="text-green-700">Official format practice exams</p>
+                <div className="bg-green-50 p-4 sm:p-6 rounded-lg">
+                  <h4 className="font-bold text-green-900 mb-2 text-sm sm:text-base">JLPT Mock Tests</h4>
+                  <p className="text-green-700 text-sm sm:text-base">Official format practice exams</p>
                 </div>
-                <div className="bg-purple-50 p-6 rounded-lg">
-                  <h4 className="font-bold text-purple-900 mb-2">Kaishi Practice Tests</h4>
-                  <p className="text-purple-700">Adaptive difficulty assessments</p>
+                <div className="bg-purple-50 p-4 sm:p-6 rounded-lg">
+                  <h4 className="font-bold text-purple-900 mb-2 text-sm sm:text-base">Kaishi Practice Tests</h4>
+                  <p className="text-purple-700 text-sm sm:text-base">Adaptive difficulty assessments</p>
                 </div>
               </div>
             </div>
 
             {/* Exam Structure */}
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-gray-900">Exam Structure</h3>
+            <div className="space-y-4 sm:space-y-6">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Exam Structure</h3>
               {examStructure.map((exam, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-md p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-xl font-bold text-gray-900">{exam.type}</h4>
-                    <div className="flex items-center space-x-4 text-sm text-gray-600">
+                <div key={index} className="bg-white rounded-lg shadow-md p-4 sm:p-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 sm:mb-4 space-y-2 sm:space-y-0">
+                    <h4 className="text-lg sm:text-xl font-bold text-gray-900">{exam.type}</h4>
+                    <div className="flex items-center space-x-4 text-xs sm:text-sm text-gray-600">
                       <span>{exam.questions} Questions</span>
                       <span>{exam.timeLimit}</span>
                     </div>
                   </div>
-                  <p className="text-gray-600">{exam.description}</p>
+                  <p className="text-sm sm:text-base text-gray-600">{exam.description}</p>
                 </div>
               ))}
             </div>
 
             {/* Special Features */}
-            <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-xl p-8">
-              <h3 className="text-2xl font-bold mb-6">Special Testing Features</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-xl p-6 sm:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Special Testing Features</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <h4 className="font-bold mb-2">📝 All MCQ Format</h4>
-                  <p className="text-green-100">Every question is multiple choice for clear, objective assessment</p>
+                  <h4 className="font-bold mb-2 text-sm sm:text-base">📝 All MCQ Format</h4>
+                  <p className="text-green-100 text-sm sm:text-base">Every question is multiple choice for clear, objective assessment</p>
                 </div>
                 <div>
-                  <h4 className="font-bold mb-2">🌍 Global Accessibility</h4>
-                  <p className="text-green-100">Take exams from any country, available 24/7</p>
+                  <h4 className="font-bold mb-2 text-sm sm:text-base">🌍 Global Accessibility</h4>
+                  <p className="text-green-100 text-sm sm:text-base">Take exams from any country, available 24/7</p>
                 </div>
                 <div>
-                  <h4 className="font-bold mb-2">🎧 Audio Integration</h4>
-                  <p className="text-green-100">High-quality audio for listening comprehension tests</p>
+                  <h4 className="font-bold mb-2 text-sm sm:text-base">🎧 Audio Integration</h4>
+                  <p className="text-green-100 text-sm sm:text-base">High-quality audio for listening comprehension tests</p>
                 </div>
                 <div>
-                  <h4 className="font-bold mb-2">📊 Instant Results</h4>
-                  <p className="text-green-100">Get detailed feedback immediately after completion</p>
+                  <h4 className="font-bold mb-2 text-sm sm:text-base">📊 Instant Results</h4>
+                  <p className="text-green-100 text-sm sm:text-base">Get detailed feedback immediately after completion</p>
                 </div>
               </div>
             </div>
@@ -773,28 +773,28 @@ const JLPTN5: React.FC = () => {
         )}
 
         {activeTab === 'certificate' && (
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             <div className="text-center">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Japanese Kaishi Test Certificate</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-4">Japanese Kaishi Test Certificate</h2>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
                 Earn your internationally recognized N5 proficiency certificate
               </p>
             </div>
 
             {/* Certificate Preview */}
-            <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-8">
-              <div className="bg-white rounded-xl shadow-2xl p-8 max-w-2xl mx-auto">
-                <div className="text-center border-4 border-yellow-400 p-8 rounded-lg">
-                  <div className="text-4xl mb-4">🏆</div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Certificate of Completion</h3>
-                  <h4 className="text-xl text-yellow-600 font-bold mb-4">Japanese Kaishi Test - JLPT N5</h4>
-                  <p className="text-gray-600 mb-4">This certifies that</p>
-                  <p className="text-2xl font-bold text-gray-900 mb-4">[Your Name]</p>
-                  <p className="text-gray-600 mb-6">
+            <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-4 sm:p-8">
+              <div className="bg-white rounded-xl shadow-2xl p-4 sm:p-8 max-w-2xl mx-auto">
+                <div className="text-center border-4 border-yellow-400 p-4 sm:p-8 rounded-lg">
+                  <div className="text-3xl sm:text-4xl mb-4">🏆</div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Certificate of Completion</h3>
+                  <h4 className="text-lg sm:text-xl text-yellow-600 font-bold mb-4">Japanese Kaishi Test - JLPT N5</h4>
+                  <p className="text-sm sm:text-base text-gray-600 mb-4">This certifies that</p>
+                  <p className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">[Your Name]</p>
+                  <p className="text-sm sm:text-base text-gray-600 mb-6">
                     has successfully completed the Japanese Kaishi Test N5 level with proficiency 
                     equivalent to JLPT N5 standard
                   </p>
-                  <div className="flex justify-between items-center text-sm text-gray-500">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center text-xs sm:text-sm text-gray-500 space-y-2 sm:space-y-0">
                     <div>Certificate ID: KT-N5-2024-XXXX</div>
                     <div>Date: [Completion Date]</div>
                   </div>
@@ -803,38 +803,38 @@ const JLPTN5: React.FC = () => {
             </div>
 
             {/* Certificate Benefits */}
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Certificate Benefits</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-xl shadow-lg p-6 sm:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Certificate Benefits</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-green-600 mt-1" />
+                    <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-600 mt-1" />
                     <div>
-                      <h4 className="font-bold text-gray-900">International Recognition</h4>
-                      <p className="text-gray-600">Accepted by language schools worldwide</p>
+                      <h4 className="font-bold text-gray-900 text-sm sm:text-base">International Recognition</h4>
+                      <p className="text-gray-600 text-sm sm:text-base">Accepted by language schools worldwide</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-green-600 mt-1" />
+                    <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-600 mt-1" />
                     <div>
-                      <h4 className="font-bold text-gray-900">Digital Verification</h4>
-                      <p className="text-gray-600">Blockchain-secured certificate authenticity</p>
+                      <h4 className="font-bold text-gray-900 text-sm sm:text-base">Digital Verification</h4>
+                      <p className="text-gray-600 text-sm sm:text-base">Blockchain-secured certificate authenticity</p>
                     </div>
                   </div>
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-green-600 mt-1" />
+                    <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-600 mt-1" />
                     <div>
-                      <h4 className="font-bold text-gray-900">Career Advancement</h4>
-                      <p className="text-gray-600">Boost your resume with Japanese proficiency</p>
+                      <h4 className="font-bold text-gray-900 text-sm sm:text-base">Career Advancement</h4>
+                      <p className="text-gray-600 text-sm sm:text-base">Boost your resume with Japanese proficiency</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-green-600 mt-1" />
+                    <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-600 mt-1" />
                     <div>
-                      <h4 className="font-bold text-gray-900">Pathway to Higher Levels</h4>
-                      <p className="text-gray-600">Direct access to N4 course upon completion</p>
+                      <h4 className="font-bold text-gray-900 text-sm sm:text-base">Pathway to Higher Levels</h4>
+                      <p className="text-gray-600 text-sm sm:text-base">Direct access to N4 course upon completion</p>
                     </div>
                   </div>
                 </div>
@@ -842,29 +842,29 @@ const JLPTN5: React.FC = () => {
             </div>
 
             {/* Interview Preparation */}
-            <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl p-8">
-              <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold mb-4">Language School Interview Preparation</h3>
-                <p className="text-purple-100 text-lg">
+            <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl p-6 sm:p-8">
+              <div className="text-center mb-6 sm:mb-8">
+                <h3 className="text-2xl sm:text-3xl font-bold mb-4">Language School Interview Preparation</h3>
+                <p className="text-purple-100 text-base sm:text-lg">
                   Complete your journey with professional interview training
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                  <Users className="w-8 h-8 mb-4" />
-                  <h4 className="font-bold mb-2">Mock Interviews</h4>
-                  <p className="text-purple-100 text-sm">Practice with AI interviewer simulating real scenarios</p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 sm:p-6">
+                  <Users className="w-6 h-6 sm:w-8 sm:h-8 mb-3 sm:mb-4" />
+                  <h4 className="font-bold mb-2 text-sm sm:text-base">Mock Interviews</h4>
+                  <p className="text-purple-100 text-xs sm:text-sm">Practice with AI interviewer simulating real scenarios</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                  <FileText className="w-8 h-8 mb-4" />
-                  <h4 className="font-bold mb-2">Common Questions</h4>
-                  <p className="text-purple-100 text-sm">Prepare for standard language school interview questions</p>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 sm:p-6">
+                  <FileText className="w-6 h-6 sm:w-8 sm:h-8 mb-3 sm:mb-4" />
+                  <h4 className="font-bold mb-2 text-sm sm:text-base">Common Questions</h4>
+                  <p className="text-purple-100 text-xs sm:text-sm">Prepare for standard language school interview questions</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                  <Star className="w-8 h-8 mb-4" />
-                  <h4 className="font-bold mb-2">Cultural Etiquette</h4>
-                  <p className="text-purple-100 text-sm">Learn proper Japanese interview manners and customs</p>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 sm:p-6">
+                  <Star className="w-6 h-6 sm:w-8 sm:h-8 mb-3 sm:mb-4" />
+                  <h4 className="font-bold mb-2 text-sm sm:text-base">Cultural Etiquette</h4>
+                  <p className="text-purple-100 text-xs sm:text-sm">Learn proper Japanese interview manners and customs</p>
                 </div>
               </div>
             </div>
@@ -873,26 +873,26 @@ const JLPTN5: React.FC = () => {
       </div>
 
       {/* Bottom CTA */}
-      <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white py-16">
+      <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white py-12 sm:py-16">
         <div className="max-w-4xl mx-auto text-center px-4">
-          <h2 className="text-4xl font-bold mb-6">Ready to Master Japanese?</h2>
-          <p className="text-xl mb-8 text-purple-100">
+          <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6">Ready to Master Japanese?</h2>
+          <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-purple-100">
             Join 50,000+ students who chose the AI-powered path to JLPT success
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <button className="bg-yellow-400 text-purple-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-300 transition-all duration-300 flex items-center space-x-2 group">
-              <Sparkles className="w-6 h-6 group-hover:scale-110 transition-transform" />
+            <button className="bg-yellow-400 text-purple-900 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-yellow-300 transition-all duration-300 flex items-center space-x-2 group w-full sm:w-auto justify-center">
+              <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
               <span>Start Your Journey - ¥1,999/month</span>
             </button>
-            <button className="bg-gradient-to-r from-green-500 to-blue-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-green-600 hover:to-blue-600 transition-all duration-300 flex items-center space-x-2 group">
-              <Users className="w-6 h-6 group-hover:scale-110 transition-transform" />
+            <button className="bg-gradient-to-r from-green-500 to-blue-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:from-green-600 hover:to-blue-600 transition-all duration-300 flex items-center space-x-2 group w-full sm:w-auto justify-center">
+              <Users className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
               <span>Join Live Classes</span>
             </button>
-            <button className="text-white border border-white/30 px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300">
+            <button className="text-white border border-white/30 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 w-full sm:w-auto">
               Try Free for 7 Days
             </button>
           </div>
-          <p className="text-sm text-purple-200 mt-4">
+          <p className="text-xs sm:text-sm text-purple-200 mt-4">
             No commitment • Cancel anytime • 30-day money-back guarantee
           </p>
         </div>
