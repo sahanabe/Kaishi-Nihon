@@ -219,14 +219,11 @@ const Footer: React.FC = () => {
                 <Heart className="w-4 h-4 text-red-500" />
                 <span>for Japan dreamers</span>
               </span>
+              <span>•</span>
+              <span className="text-purple-400 font-medium">Powered by Kaishi Innovations.com</span>
             </div>
             
             <div className="flex items-center space-x-6 text-sm text-gray-400">
-              <div className="flex items-center space-x-1">
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span>AI System Online</span>
-              </div>
-              <span>•</span>
               <span>🇯🇵 Proudly serving Japan immigration since 2024</span>
             </div>
           </div>

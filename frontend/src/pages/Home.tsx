@@ -371,20 +371,20 @@ const Home: React.FC = () => {
         </section>
 
         {/* Revolutionary AI Features Showcase */}
-        <section className="py-32 relative">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-20">
-              <h2 className="text-6xl font-bold mb-8">
+        <section className="py-16 md:py-24 lg:py-32 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 md:mb-16 lg:mb-20">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 lg:mb-8">
                 <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                   🚀 Revolutionary AI Features
                 </span>
               </h2>
-              <p className="text-2xl text-white/80 max-w-3xl mx-auto">
+              <p className="text-lg sm:text-xl md:text-2xl text-white/80 max-w-3xl mx-auto px-4">
                 Technology that feels like magic, experiences that seem impossible
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
               {[
                 {
                   title: '🧠 Quantum AI Predictor',
@@ -432,18 +432,18 @@ const Home: React.FC = () => {
                 const IconComponent = feature.icon;
                 return (
                   <div key={index} className="group relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-white/10 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-700"></div>
-                    <div className="relative bg-black/40 backdrop-blur-2xl rounded-3xl p-8 border border-white/20 group-hover:border-white/40 transition-all duration-500 transform group-hover:scale-105 group-hover:-translate-y-2">
-                      <div className={`w-20 h-20 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl group-hover:rotate-12 transition-transform duration-500`}>
-                        <IconComponent className="w-10 h-10 text-white" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-white/10 rounded-2xl sm:rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-700"></div>
+                    <div className="relative bg-black/40 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-white/20 group-hover:border-white/40 transition-all duration-500 transform group-hover:scale-105 group-hover:-translate-y-2">
+                      <div className={`w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r ${feature.color} rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-2xl group-hover:rotate-12 transition-transform duration-500`}>
+                        <IconComponent className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                       </div>
-                      <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
-                      <p className="text-white/80 mb-6 leading-relaxed">{feature.description}</p>
+                      <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 sm:mb-4 text-center sm:text-left">{feature.title}</h3>
+                      <p className="text-white/80 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base text-center sm:text-left">{feature.description}</p>
                       <div className="space-y-2">
                         {feature.features.map((feat, i) => (
                           <div key={i} className="flex items-center space-x-2">
-                            <div className={`w-2 h-2 bg-gradient-to-r ${feature.color} rounded-full`}></div>
-                            <span className="text-white/70 text-sm">{feat}</span>
+                            <div className={`w-2 h-2 bg-gradient-to-r ${feature.color} rounded-full flex-shrink-0`}></div>
+                            <span className="text-white/70 text-xs sm:text-sm">{feat}</span>
                           </div>
                         ))}
                       </div>
@@ -456,126 +456,126 @@ const Home: React.FC = () => {
         </section>
 
         {/* AI-Powered Features - Floating Timeline Design */}
-        <section className="py-32 relative overflow-hidden">
+        <section className="py-16 md:py-24 lg:py-32 relative overflow-hidden">
           {/* Animated Background */}
           <div className="absolute inset-0">
-            <div className="absolute top-20 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full mix-blend-screen filter blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-20 right-1/4 w-80 h-80 bg-gradient-to-r from-pink-400/20 to-red-600/20 rounded-full mix-blend-screen filter blur-3xl animate-pulse animation-delay-2000"></div>
+            <div className="absolute top-20 left-1/4 w-48 h-48 sm:w-96 sm:h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full mix-blend-screen filter blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-1/4 w-40 h-40 sm:w-80 sm:h-80 bg-gradient-to-r from-pink-400/20 to-red-600/20 rounded-full mix-blend-screen filter blur-3xl animate-pulse animation-delay-2000"></div>
           </div>
 
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Section Header */}
-            <div className="text-center mb-24">
-              <h2 className="text-6xl lg:text-7xl font-black mb-6">
+            <div className="text-center mb-12 md:mb-16 lg:mb-24">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 md:mb-6">
                 <span className="bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-500 bg-clip-text text-transparent">
                   Revolutionary AI Features
                 </span>
               </h2>
-              <p className="text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-lg sm:text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed px-4">
                 Experience the future of Japan immigration with our cutting-edge AI technology
               </p>
             </div>
 
             {/* Floating Feature Timeline */}
             <div className="relative">
-              {/* Central Timeline Line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-cyan-400 via-purple-500 to-pink-400"></div>
+              {/* Central Timeline Line - Hidden on mobile */}
+              <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-cyan-400 via-purple-500 to-pink-400"></div>
               
-              <div className="space-y-32">
+              <div className="space-y-8 md:space-y-16 lg:space-y-32">
                 {/* Feature 1 - Left Side */}
-                <div className="flex items-center justify-between">
-                  <div className="w-5/12 group">
-                    <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 backdrop-blur-xl rounded-[3rem] p-10 border border-cyan-300/20 transform group-hover:scale-105 transition-all duration-700 group-hover:rotate-1">
-                      <div className="flex items-center space-x-5 mb-6">
-                        <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center text-2xl">
+                <div className="flex flex-col md:flex-row items-center justify-between">
+                  <div className="w-full md:w-5/12 group mb-6 md:mb-0">
+                    <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 backdrop-blur-xl rounded-2xl md:rounded-[3rem] p-6 md:p-10 border border-cyan-300/20 transform group-hover:scale-105 transition-all duration-700 group-hover:rotate-1">
+                      <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-3 sm:space-y-0 sm:space-x-5 mb-4 md:mb-6">
+                        <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center text-xl md:text-2xl">
                           🧠
                         </div>
-                        <div>
-                          <h3 className="text-2xl font-bold text-white mb-1">AI Life Simulator</h3>
-                          <p className="text-cyan-300 text-base">Experience Japan Before You Arrive</p>
+                        <div className="text-center sm:text-left">
+                          <h3 className="text-lg md:text-2xl font-bold text-white mb-1">AI Life Simulator</h3>
+                          <p className="text-cyan-300 text-sm md:text-base">Experience Japan Before You Arrive</p>
                         </div>
                       </div>
-                      <p className="text-white/90 text-base leading-relaxed mb-6">
+                      <p className="text-white/90 text-sm md:text-base leading-relaxed mb-4 md:mb-6 text-center sm:text-left">
                         Step into a virtual Japan and experience daily life scenarios, cultural situations, and real-world challenges through our advanced AI simulation.
                       </p>
-                      <div className="flex flex-wrap gap-3">
-                        <span className="px-4 py-2 bg-cyan-500/20 rounded-full text-cyan-300 text-sm">Virtual Reality</span>
-                        <span className="px-4 py-2 bg-blue-500/20 rounded-full text-blue-300 text-sm">Cultural Training</span>
-                        <span className="px-4 py-2 bg-purple-500/20 rounded-full text-purple-300 text-sm">AI Scenarios</span>
+                      <div className="flex flex-wrap gap-2 md:gap-3 justify-center sm:justify-start">
+                        <span className="px-3 py-1 md:px-4 md:py-2 bg-cyan-500/20 rounded-full text-cyan-300 text-xs md:text-sm">Virtual Reality</span>
+                        <span className="px-3 py-1 md:px-4 md:py-2 bg-blue-500/20 rounded-full text-blue-300 text-xs md:text-sm">Cultural Training</span>
+                        <span className="px-3 py-1 md:px-4 md:py-2 bg-purple-500/20 rounded-full text-purple-300 text-xs md:text-sm">AI Scenarios</span>
                       </div>
                     </div>
                   </div>
                   
-                  {/* Timeline Node */}
-                  <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full border-4 border-white/30 flex items-center justify-center z-10">
+                  {/* Timeline Node - Hidden on mobile */}
+                  <div className="hidden md:flex w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full border-4 border-white/30 items-center justify-center z-10">
                     <div className="w-6 h-6 bg-white rounded-full animate-pulse"></div>
                   </div>
                   
-                  <div className="w-5/12"></div>
+                  <div className="hidden md:block w-5/12"></div>
                 </div>
 
                 {/* Feature 2 - Right Side */}
-                <div className="flex items-center justify-between">
-                  <div className="w-5/12"></div>
+                <div className="flex flex-col md:flex-row items-center justify-between">
+                  <div className="hidden md:block w-5/12"></div>
                   
-                  {/* Timeline Node */}
-                  <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full border-4 border-white/30 flex items-center justify-center z-10">
+                  {/* Timeline Node - Hidden on mobile */}
+                  <div className="hidden md:flex w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full border-4 border-white/30 items-center justify-center z-10">
                     <div className="w-6 h-6 bg-white rounded-full animate-pulse animation-delay-1000"></div>
                   </div>
                   
-                  <div className="w-5/12 group">
-                    <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 backdrop-blur-xl rounded-[3rem] p-10 border border-purple-300/20 transform group-hover:scale-105 transition-all duration-700 group-hover:-rotate-1">
-                      <div className="flex items-center space-x-5 mb-6">
-                        <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-2xl">
+                  <div className="w-full md:w-5/12 group mb-6 md:mb-0">
+                    <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 backdrop-blur-xl rounded-2xl md:rounded-[3rem] p-6 md:p-10 border border-purple-300/20 transform group-hover:scale-105 transition-all duration-700 group-hover:-rotate-1">
+                      <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-3 sm:space-y-0 sm:space-x-5 mb-4 md:mb-6">
+                        <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-xl md:text-2xl">
                           💬
                         </div>
-                        <div>
-                          <h3 className="text-2xl font-bold text-white mb-1">Smart Language AI</h3>
-                          <p className="text-pink-300 text-base">Master Japanese with AI Tutoring</p>
+                        <div className="text-center sm:text-left">
+                          <h3 className="text-lg md:text-2xl font-bold text-white mb-1">Smart Language AI</h3>
+                          <p className="text-pink-300 text-sm md:text-base">Master Japanese with AI Tutoring</p>
                         </div>
                       </div>
-                      <p className="text-white/90 text-base leading-relaxed mb-6">
+                      <p className="text-white/90 text-sm md:text-base leading-relaxed mb-4 md:mb-6 text-center sm:text-left">
                         Our AI language companion adapts to your learning style, provides real-time pronunciation feedback, and creates personalized conversation scenarios.
                       </p>
-                      <div className="flex flex-wrap gap-3">
-                        <span className="px-4 py-2 bg-purple-500/20 rounded-full text-purple-300 text-sm">Voice Recognition</span>
-                        <span className="px-4 py-2 bg-pink-500/20 rounded-full text-pink-300 text-sm">Real Conversations</span>
-                        <span className="px-4 py-2 bg-red-500/20 rounded-full text-red-300 text-sm">Adaptive Learning</span>
+                      <div className="flex flex-wrap gap-2 md:gap-3 justify-center sm:justify-start">
+                        <span className="px-3 py-1 md:px-4 md:py-2 bg-purple-500/20 rounded-full text-purple-300 text-xs md:text-sm">Voice Recognition</span>
+                        <span className="px-3 py-1 md:px-4 md:py-2 bg-pink-500/20 rounded-full text-pink-300 text-xs md:text-sm">Real Conversations</span>
+                        <span className="px-3 py-1 md:px-4 md:py-2 bg-red-500/20 rounded-full text-red-300 text-xs md:text-sm">Adaptive Learning</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Feature 3 - Left Side */}
-                <div className="flex items-center justify-between">
-                  <div className="w-5/12 group">
-                    <div className="bg-gradient-to-r from-green-500/10 to-teal-500/10 backdrop-blur-xl rounded-[3rem] p-10 border border-green-300/20 transform group-hover:scale-105 transition-all duration-700 group-hover:rotate-1">
-                      <div className="flex items-center space-x-5 mb-6">
-                        <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center text-2xl">
+                <div className="flex flex-col md:flex-row items-center justify-between">
+                  <div className="w-full md:w-5/12 group mb-6 md:mb-0">
+                    <div className="bg-gradient-to-r from-green-500/10 to-teal-500/10 backdrop-blur-xl rounded-2xl md:rounded-[3rem] p-6 md:p-10 border border-green-300/20 transform group-hover:scale-105 transition-all duration-700 group-hover:rotate-1">
+                      <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-3 sm:space-y-0 sm:space-x-5 mb-4 md:mb-6">
+                        <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center text-xl md:text-2xl">
                           🏠
                         </div>
-                        <div>
-                          <h3 className="text-2xl font-bold text-white mb-1">Virtual Housing Portal</h3>
-                          <p className="text-green-300 text-base">Explore Your Future Home in 3D</p>
+                        <div className="text-center sm:text-left">
+                          <h3 className="text-lg md:text-2xl font-bold text-white mb-1">Virtual Housing Portal</h3>
+                          <p className="text-green-300 text-sm md:text-base">Explore Your Future Home in 3D</p>
                         </div>
                       </div>
-                      <p className="text-white/90 text-base leading-relaxed mb-6">
+                      <p className="text-white/90 text-sm md:text-base leading-relaxed mb-4 md:mb-6 text-center sm:text-left">
                         Take immersive 3D tours of apartments, calculate commute times, and explore neighborhoods with our advanced virtual reality platform.
                       </p>
-                      <div className="flex flex-wrap gap-3">
-                        <span className="px-4 py-2 bg-green-500/20 rounded-full text-green-300 text-sm">3D Tours</span>
-                        <span className="px-4 py-2 bg-teal-500/20 rounded-full text-teal-300 text-sm">Neighborhood Guide</span>
-                        <span className="px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 text-sm">Commute Calculator</span>
+                      <div className="flex flex-wrap gap-2 md:gap-3 justify-center sm:justify-start">
+                        <span className="px-3 py-1 md:px-4 md:py-2 bg-green-500/20 rounded-full text-green-300 text-xs md:text-sm">3D Tours</span>
+                        <span className="px-3 py-1 md:px-4 md:py-2 bg-teal-500/20 rounded-full text-teal-300 text-xs md:text-sm">Neighborhood Guide</span>
+                        <span className="px-3 py-1 md:px-4 md:py-2 bg-emerald-500/20 rounded-full text-emerald-300 text-xs md:text-sm">Commute Calculator</span>
                       </div>
                     </div>
                   </div>
                   
-                  {/* Timeline Node */}
-                  <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-teal-500 rounded-full border-4 border-white/30 flex items-center justify-center z-10">
+                  {/* Timeline Node - Hidden on mobile */}
+                  <div className="hidden md:flex w-16 h-16 bg-gradient-to-r from-green-400 to-teal-500 rounded-full border-4 border-white/30 items-center justify-center z-10">
                     <div className="w-6 h-6 bg-white rounded-full animate-pulse animation-delay-2000"></div>
                   </div>
                   
-                  <div className="w-5/12"></div>
+                  <div className="hidden md:block w-5/12"></div>
                 </div>
               </div>
             </div>

@@ -146,6 +146,53 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialTab = 're
     }
   };
 
+  // Demo Google Sign-In function
+  const handleDemoGoogleSignIn = async () => {
+    setIsLoading(true);
+    setError('');
+
+    try {
+      console.log('🔐 Demo Google Sign-In initiated');
+      
+      // Simulate Google sign-in delay
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      // Generate realistic user name for demo
+      const demoNames = [
+        'Yuki Tanaka',
+        'Hiroshi Yamamoto', 
+        'Aiko Suzuki',
+        'Kenji Watanabe',
+        'Mika Sato',
+        'Takashi Ito',
+        'Yumi Nakamura',
+        'Shinji Kobayashi',
+        'Akiko Fujimoto',
+        'Masato Tanaka'
+      ];
+      
+      const randomName = demoNames[Math.floor(Math.random() * demoNames.length)];
+      const demoEmail = `demo.${randomName.toLowerCase().replace(' ', '.')}@gmail.com`;
+      
+      // Create a mock Google credential response
+      const mockResponse = {
+        credential: 'demo-google-credential-' + Date.now(),
+        clientId: 'demo-client-id',
+        select_by: 'btn'
+      };
+      
+      console.log('🔐 Demo Google Sign-In response received:', mockResponse);
+      await googleSignIn(mockResponse.credential);
+      console.log('✅ Demo Google Sign-In successful!');
+      onClose(); // Close modal on successful sign-in
+    } catch (err: any) {
+      console.error('❌ Demo Google Sign-In failed:', err);
+      setError(err.message || 'Demo Google Sign-In failed. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   if (!isOpen) return null;
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -573,8 +620,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialTab = 're
             <div className="mt-3 grid grid-cols-2 gap-3">
               <div className="w-full flex justify-center">
                 <button 
-                  ref={googleButtonRef}
-                  onClick={handleGoogleButtonClick}
+                  onClick={handleDemoGoogleSignIn}
                   className="w-full inline-flex justify-center py-1.5 px-3 border border-gray-300 rounded-lg shadow-sm bg-white text-xs font-medium text-gray-500 hover:bg-gray-50 transition-colors"
                   disabled={isLoading}
                 >
@@ -585,7 +631,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialTab = 're
                     <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
                   </svg>
                   <span className="ml-2">
-                    {activeTab === 'register' ? 'Sign up with Google' : 'Sign in with Google'}
+                    {activeTab === 'register' ? 'Demo Google Sign Up' : 'Demo Google Sign In'}
                   </span>
                 </button>
               </div>
