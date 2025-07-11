@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Kaishi-Nihon/static/css/main.fe8c6aa9.css",
-    "main.js": "/Kaishi-Nihon/static/js/main.2c669f7f.js",
+    "main.css": "/Kaishi-Nihon/static/css/main.99f99c86.css",
+    "main.js": "/Kaishi-Nihon/static/js/main.4db2d75e.js",
     "static/js/453.670e15c7.chunk.js": "/Kaishi-Nihon/static/js/453.670e15c7.chunk.js",
     "static/media/logo.png": "/Kaishi-Nihon/static/media/logo.9b97b211e6ed7776f903.png",
     "index.html": "/Kaishi-Nihon/index.html",
-    "main.fe8c6aa9.css.map": "/Kaishi-Nihon/static/css/main.fe8c6aa9.css.map",
-    "main.2c669f7f.js.map": "/Kaishi-Nihon/static/js/main.2c669f7f.js.map",
+    "main.99f99c86.css.map": "/Kaishi-Nihon/static/css/main.99f99c86.css.map",
+    "main.4db2d75e.js.map": "/Kaishi-Nihon/static/js/main.4db2d75e.js.map",
     "453.670e15c7.chunk.js.map": "/Kaishi-Nihon/static/js/453.670e15c7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fe8c6aa9.css",
-    "static/js/main.2c669f7f.js"
+    "static/css/main.99f99c86.css",
+    "static/js/main.4db2d75e.js"
   ]
 }
